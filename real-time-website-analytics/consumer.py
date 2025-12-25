@@ -15,7 +15,7 @@ spark = SparkSession \
     .config('spark.hadoop.fs.s3a.endpoint', "s3.amazonaws.com") \
     .config('spark.hadoop.fs.s3a.endpoint.region', os.getenv("AWS_DEFAULT_REGION")) \
     .config('spark.hadoop.fs.s3a.impl', "org.apache.hadoop.fs.s3a.S3AFileSystem") \
-    .config('spark.jars.packages', "org.apache.hadoop:hadoop-aws:3.4.1,com.amazonaws:aws-java-sdk-bundle:1.11.1026") \
+    .config('spark.jars.packages', "org.apache.hadoop:hadoop-aws:3.4.1,com.amazonaws:aws-java-sdk-bundle:1.11.1026,org.apache.spark:spark-sql-kafka-0-10_2.13:4.0.1") \
     .getOrCreate()
     
 print("Spark Version: ", spark.version)
