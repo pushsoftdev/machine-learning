@@ -38,7 +38,7 @@ window = Window.partitionBy("user_id").orderBy("event_time")
 df = df.withColumn("prev_event_time", lag("event_time").over(window)) \
     .withColumn("time_diff_min", (col("event_time") - col("prev_event_time")) / 60)
 
-window = Window.partitionBy("user_id").orderBy("event_time")
+window = Window.partitionBy("user_id").orderBy("event_time").rowsBetween(Window.unboundedPreceding, Window.unboundedFollowing)
 
 df = df.withColumn(
     "new_session",
