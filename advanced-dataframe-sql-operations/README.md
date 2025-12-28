@@ -285,7 +285,6 @@ mysql -u root -p -e "SHOW DATABASES;"
 
 ---
 
-**Author**: Session Analytics Demo  
 **Last Updated**: 2025-12-28  
 **Spark Version**: 4.0.1
 
